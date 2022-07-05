@@ -1,5 +1,16 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+function draw() {
+    let canvas = document.getElementById('canvas');
 
-ctx.fillStyle = 'green';
-ctx.fillRect(0, 0, canvas.width, canvas.height);
+    if (canvas.getContext) {
+        let ctx = canvas.getContext('2d');
+        drawBg(ctx);
+    }
+}
+
+function drawBg(ctx) {
+    let img = new Image();
+    img.onload = function () {
+        ctx.drawImage(img, 0, 0, 1250, 750);
+    };
+    img.src = './images/bg.png';
+}
