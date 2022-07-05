@@ -19,7 +19,7 @@ function drawBg(ctx) {
 function drawFg(ctx) {
     let img = new Image();
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, 1250, 125);
+        ctx.drawImage(img, 0, 600, 1250, 125);
     };
     img.src = './images/fg.png';
 }
